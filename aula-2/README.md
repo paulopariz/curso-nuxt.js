@@ -1,4 +1,4 @@
-# aula-1
+# nuxt-1
 
 ## Build Setup
 
