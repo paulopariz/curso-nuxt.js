@@ -10,7 +10,16 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "",
+  middleware: "auth",
+
+  data() {
+    return {};
+  },
+
+  methods: {},
+};
 </script>
 
 <style></style>
