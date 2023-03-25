@@ -17,15 +17,44 @@
           >Markenting digital</nuxt-link
         >
       </div>
-      <br /><br />
 
       <nuxt-child />
+
+      <br />
+      <br />
+
+      <br />
+
+      <div v-if="$fetchState.pending">Carregando...</div>
+
+      <div v-else>
+        <div
+          v-for="service in services"
+          :key="service.id"
+          class="border-b border-gray-500 py-5"
+        >
+          <pre>{{ service.username }}</pre>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      services: [],
+    };
+  },
+
+  async fetch() {
+    this.services = await this.$axios.$get(
+      "https://jsonplaceholder.typicode.com/users?_limit=3"
+    );
+    console.log(this);
+  },
+};
 </script>
 
 <style></style>
