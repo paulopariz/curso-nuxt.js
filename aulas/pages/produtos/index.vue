@@ -13,6 +13,19 @@
           >Produtos B</nuxt-link
         >
       </div>
+      <br />
+      <br />
+
+      <div
+        v-for="produto in produtos"
+        :key="produto.id"
+        class="border-b border-gray-500 py-5"
+      >
+        {{ produto.title }}
+      </div>
+
+      <br />
+      <br />
 
       <p class="text-gray-600">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore explicabo maxime
@@ -24,7 +37,21 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {};
+  },
+
+  async asyncData({ $axios }) {
+    const produtos = await $axios.$get(
+      "https://jsonplaceholder.typicode.com/posts?_limit=3"
+    );
+
+    return {
+      produtos,
+    };
+  },
+};
 </script>
 
 <style></style>
