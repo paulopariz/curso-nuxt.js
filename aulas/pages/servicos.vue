@@ -42,9 +42,26 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "Minha descrição do serviço",
+        },
+      ],
+      bodyAttrs: {
+        class: "bg-gray-300",
+      },
+    };
+  },
+
   data() {
     return {
       services: [],
+      title: "Carregando...",
     };
   },
 
@@ -53,6 +70,18 @@ export default {
       "https://jsonplaceholder.typicode.com/users?_limit=3"
     );
     console.log(this);
+  },
+
+  created() {
+    this.getTitle();
+  },
+
+  methods: {
+    getTitle() {
+      setTimeout(() => {
+        this.title = "Serviços";
+      }, 2000);
+    },
   },
 };
 </script>
