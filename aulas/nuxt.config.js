@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'nuxt-1',
+    title: 'Nuxt',
     htmlAttrs: {
       lang: 'en'
     },
@@ -20,6 +20,15 @@ export default {
     ]
   },
 
+
+  publicRuntimeConfig: {
+    yt_api_key: process.env.YT_API_KEY
+  },
+
+  privateRuntimeConfig: {
+    fc_api_key: process.env.FC_API_KEY
+
+  },
   // router: {
   //   middleware: 'auth'
   // },

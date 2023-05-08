@@ -80,7 +80,7 @@ export default {
     getTitle() {
       setTimeout(() => {
         this.title = "Serviços";
-      }, 2000);
+      }, 1000);
     },
   },
 };
