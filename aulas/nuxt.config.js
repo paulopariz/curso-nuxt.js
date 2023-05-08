@@ -46,7 +46,8 @@ export default {
     },
 
     '@/plugins/dayjs',
-    '@/plugins/vtooltip'
+    '@/plugins/vtooltip',
+    '@/plugins/axios'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
