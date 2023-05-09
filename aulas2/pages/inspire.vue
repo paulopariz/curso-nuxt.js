@@ -1,5 +1,11 @@
 <template>
   <v-row>
+    <my-registro />
+
+    <br>
+    <br>
+
+    <my-usuario />
     <v-col class="text-center">
       <img
         src="/v.png"
@@ -19,6 +25,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'InspirePage'
 }
