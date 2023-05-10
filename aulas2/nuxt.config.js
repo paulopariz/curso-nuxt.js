@@ -60,7 +60,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: false,
+      dark: true,
       themes: {
         dark: {
           primary: colors.blue.darken2,
@@ -77,5 +77,13 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    // ...
+    extend (config, ctx) {
+      // Remove Eslint Loader
+      const eslintIndex = config.module.rules.findIndex(r => r.use && r.use.some(u => u.loader === 'eslint-loader'))
+      if (eslintIndex !== -1) {
+        config.module.rules.splice(eslintIndex, 1)
+      }
+    }
   }
 }
