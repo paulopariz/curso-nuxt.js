@@ -111,6 +111,11 @@ export default {
           icon: 'mdi-earth',
           title: 'Paises',
           to: '/paises'
+        },
+        {
+          icon: 'mdi-earth',
+          title: 'Favoritos',
+          to: '/favoritos'
         }
       ],
       miniVariant: false,
