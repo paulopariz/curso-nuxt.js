@@ -1,7 +1,7 @@
 <template>
   <div>
     <client-only>
-      <vue-typer :text="'Países favoritos' + totalFavoritos" />
+      <vue-typer :text="'Países favoritos' +  ' '  + totalFavoritos" />
     </client-only>
 
     <ul>
@@ -29,6 +29,7 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 export default {
+  middleware: 'permissoes',
   data () {
     return {
       paises: [

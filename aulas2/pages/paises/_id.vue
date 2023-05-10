@@ -11,7 +11,24 @@ export default {
   },
   data () {
     return {
-      id: this.$route.params.id
+      id: this.$route.params.id,
+      pais: [
+        { id: 1, nome: 'Brasil' },
+        { id: 2, nome: 'Argentina' },
+        { id: 1, nome: 'Alemanha' }
+      ].find(x => x.id === +this.$route.params.id)
+    }
+  },
+  head () {
+    return {
+      title: this.pais.nome,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Tudo sobre ' + this.pais.nome
+        }
+      ]
     }
   }
 }
