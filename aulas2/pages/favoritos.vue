@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1>Países favoritos {{ totalFavoritos }}</h1>
+    <client-only>
+      <vue-typer :text="'Países favoritos' + totalFavoritos" />
+    </client-only>
 
     <ul>
       <li v-for="pais in favoritos" :key="pais.id">
@@ -12,6 +14,15 @@
         </v-btn>
       </li>
     </ul>
+    <!--PLUGIN-->
+    <!-- <carousel>
+      <slide>
+        <v-img :width="295" aspect-ratio="16/9" cover src="https://cdn.vuetifyjs.com/images/parallax/material.jpg" />
+      </slide>
+      <slide>
+        <v-img :width="295" aspect-ratio="16/9" cover src="https://cdn.vuetifyjs.com/images/parallax/material.jpg" />
+      </slide>
+    </carousel> -->
   </div>
 </template>
 
